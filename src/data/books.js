@@ -1,0 +1,156 @@
+// Question format: { q, correct, wrong: [3 wrong options] }
+// Options are shuffled at quiz start, so order here doesn't matter.
+export const books = {
+  pride: {
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    questions: [
+      { q: 'What is the surname of the family with five unmarried daughters?', correct: 'Bennet', wrong: ['Bingley', 'Darcy', 'Collins'] },
+      { q: 'Who is Elizabeth Bennet’s eventual husband?', correct: 'Mr. Darcy', wrong: ['Mr. Bingley', 'Mr. Wickham', 'Mr. Collins'] },
+      { q: 'What is the name of Mr. Darcy’s grand estate?', correct: 'Pemberley', wrong: ['Netherfield', 'Longbourn', 'Rosings Park'] },
+      { q: 'Who marries Charlotte Lucas?', correct: 'Mr. Collins', wrong: ['Mr. Wickham', 'Mr. Bingley', 'Colonel Fitzwilliam'] },
+      { q: 'Which Bennet sister elopes with Mr. Wickham?', correct: 'Lydia', wrong: ['Jane', 'Kitty', 'Mary'] },
+      { q: 'Who is Mr. Collins’s patroness?', correct: 'Lady Catherine de Bourgh', wrong: ['Lady Lucas', 'Mrs. Gardiner', 'Miss Bingley'] },
+      { q: 'Whom does Jane Bennet marry?', correct: 'Mr. Bingley', wrong: ['Mr. Darcy', 'Mr. Wickham', 'Colonel Brandon'] },
+      { q: 'Complete the opening line: “…a single man in possession of a good fortune, must be in want of a ___.”', correct: 'wife', wrong: ['home', 'friend', 'title'] },
+      { q: 'In which year was Pride and Prejudice first published?', correct: '1813', wrong: ['1795', '1837', '1851'] },
+      { q: 'What is the name of the Bennet family home?', correct: 'Longbourn', wrong: ['Pemberley', 'Hunsford', 'Mansfield Park'] },
+    ],
+  },
+
+  nineteen: {
+    title: 'Nineteen Eighty-Four',
+    author: 'George Orwell',
+    questions: [
+      { q: 'Who wrote Nineteen Eighty-Four?', correct: 'George Orwell', wrong: ['Aldous Huxley', 'Ray Bradbury', 'Yevgeny Zamyatin'] },
+      { q: 'What is the protagonist’s name?', correct: 'Winston Smith', wrong: ['Julian West', 'Guy Montag', 'Bernard Marx'] },
+      { q: 'What is the name of the Party’s all-seeing leader?', correct: 'Big Brother', wrong: ['Uncle Sam', 'The Director', 'The Benefactor'] },
+      { q: 'Which superstate does Winston live in?', correct: 'Oceania', wrong: ['Eurasia', 'Eastasia', 'Airstrip Two Alliance'] },
+      { q: 'What is the Party’s official language called?', correct: 'Newspeak', wrong: ['Oldspeak', 'Doublespeak', 'Panglish'] },
+      { q: 'Who is Winston’s lover?', correct: 'Julia', wrong: ['Sonia', 'Clara', 'Mildred'] },
+      { q: 'At which ministry does Winston work?', correct: 'Ministry of Truth', wrong: ['Ministry of Love', 'Ministry of Peace', 'Ministry of Plenty'] },
+      { q: 'Which of these is a Party slogan?', correct: 'Ignorance is Strength', wrong: ['Knowledge is Power', 'Unity is Peace', 'Truth is Freedom'] },
+      { q: 'What is Room 101?', correct: 'Where you face your worst fear', wrong: ['Winston’s apartment', 'The Thought Police office', 'The Records Department'] },
+      { q: 'In which year was the novel published?', correct: '1949', wrong: ['1939', '1954', '1984'] },
+    ],
+  },
+
+  gatsby: {
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    questions: [
+      { q: 'Who wrote The Great Gatsby?', correct: 'F. Scott Fitzgerald', wrong: ['Ernest Hemingway', 'John Steinbeck', 'William Faulkner'] },
+      { q: 'Who narrates the story?', correct: 'Nick Carraway', wrong: ['Tom Buchanan', 'George Wilson', 'Meyer Wolfsheim'] },
+      { q: 'Whom does the green light at the end of the dock belong to?', correct: 'Daisy Buchanan', wrong: ['Jordan Baker', 'Myrtle Wilson', 'Catherine'] },
+      { q: 'Where does Gatsby’s mansion stand?', correct: 'West Egg', wrong: ['East Egg', 'The Valley of Ashes', 'Hollywood'] },
+      { q: 'In which decade is the novel set?', correct: '1920s', wrong: ['1900s', '1930s', '1950s'] },
+      { q: 'Who is Daisy’s husband?', correct: 'Tom Buchanan', wrong: ['George Wilson', 'Meyer Wolfsheim', 'Dan Cody'] },
+      { q: 'Whose giant eyes look out from a faded billboard?', correct: 'Doctor T. J. Eckleburg', wrong: ['Owl Eyes', 'Dan Cody', 'Klipspringer'] },
+      { q: 'Who shoots Gatsby?', correct: 'George Wilson', wrong: ['Tom Buchanan', 'Nick Carraway', 'Meyer Wolfsheim'] },
+      { q: 'How did Gatsby make his fortune?', correct: 'Bootlegging and shady dealings', wrong: ['Oil drilling', 'Railroad ownership', 'Inheriting his father’s farm'] },
+      { q: 'Complete the last line: “…borne back ceaselessly into the ___.”', correct: 'past', wrong: ['sea', 'night', 'future'] },
+    ],
+  },
+
+  mockingbird: {
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    questions: [
+      { q: 'Who wrote To Kill a Mockingbird?', correct: 'Harper Lee', wrong: ['Truman Capote', 'Carson McCullers', 'Flannery O’Connor'] },
+      { q: 'Who narrates the story?', correct: 'Scout Finch', wrong: ['Jem Finch', 'Dill Harris', 'Calpurnia'] },
+      { q: 'What is the name of the fictional town where it’s set?', correct: 'Maycomb', wrong: ['Macon', 'Meridian', 'Monroeville'] },
+      { q: 'What is Atticus Finch’s profession?', correct: 'Lawyer', wrong: ['Doctor', 'Judge', 'Sheriff'] },
+      { q: 'Which woman accuses Tom Robinson?', correct: 'Mayella Ewell', wrong: ['Miss Maudie', 'Mrs. Dubose', 'Calpurnia'] },
+      { q: 'What is Boo Radley’s real first name?', correct: 'Arthur', wrong: ['Nathan', 'Walter', 'Henry'] },
+      { q: 'Who rescues Jem and Scout from Bob Ewell?', correct: 'Boo Radley', wrong: ['Atticus Finch', 'Heck Tate', 'Mr. Cunningham'] },
+      { q: 'Why is it “a sin to kill a mockingbird”?', correct: 'They only make music for us to enjoy', wrong: ['They eat farmers’ crops', 'They are an endangered species', 'They mimic and mislead people'] },
+      { q: 'What costume does Scout wear at the Halloween pageant?', correct: 'A ham', wrong: ['A mockingbird', 'A scarecrow', 'An angel'] },
+      { q: 'Which of these is Scout’s older brother?', correct: 'Jem', wrong: ['Dill', 'Walter', 'Atticus Jr.'] },
+    ],
+  },
+
+  hobbit: {
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    questions: [
+      { q: 'Who wrote The Hobbit?', correct: 'J.R.R. Tolkien', wrong: ['C.S. Lewis', 'Roald Dahl', 'T.H. White'] },
+      { q: 'What is the name of Bilbo Baggins’s home?', correct: 'Bag End', wrong: ['Rivendell', 'Erebor', 'Beorn’s Hall'] },
+      { q: 'Which wizard recruits Bilbo for the quest?', correct: 'Gandalf', wrong: ['Saruman', 'Radagast', 'Merlin'] },
+      { q: 'How many dwarves join Bilbo on the quest?', correct: '13', wrong: ['7', '10', '12'] },
+      { q: 'What is the name of the dragon?', correct: 'Smaug', wrong: ['Glaurung', 'Ancalagon', 'Drogon'] },
+      { q: 'From whom does Bilbo win the Ring in a riddle game?', correct: 'Gollum', wrong: ['Smaug', 'Thorin', 'Elrond'] },
+      { q: 'Who leads the company of dwarves?', correct: 'Thorin Oakenshield', wrong: ['Balin', 'Dwalin', 'Bofur'] },
+      { q: 'What is the name of the mountain the dwarves want to reclaim?', correct: 'The Lonely Mountain', wrong: ['The Misty Mountains', 'Mount Doom', 'Weathertop'] },
+      { q: 'Which dark forest must the company cross?', correct: 'Mirkwood', wrong: ['Fangorn', 'Lothlórien', 'The Old Forest'] },
+      { q: 'What is the name of Bilbo’s sword?', correct: 'Sting', wrong: ['Glamdring', 'Orcrist', 'Andúril'] },
+    ],
+  },
+
+  potter: {
+    title: 'Harry Potter and the Philosopher’s Stone',
+    author: 'J.K. Rowling',
+    questions: [
+      { q: 'Who wrote Harry Potter and the Philosopher’s Stone?', correct: 'J.K. Rowling', wrong: ['Philip Pullman', 'Diana Wynne Jones', 'Eoin Colfer'] },
+      { q: 'What is the platform number for the Hogwarts Express?', correct: '9¾', wrong: ['7½', '12', '13¾'] },
+      { q: 'Which house is Harry sorted into?', correct: 'Gryffindor', wrong: ['Slytherin', 'Ravenclaw', 'Hufflepuff'] },
+      { q: 'Who tells Harry he is a wizard?', correct: 'Rubeus Hagrid', wrong: ['Albus Dumbledore', 'Argus Filch', 'Severus Snape'] },
+      { q: 'What is the sport played on broomsticks?', correct: 'Quidditch', wrong: ['Quodpot', 'Gobstones', 'Wizard’s Chess'] },
+      { q: 'What does the Mirror of Erised show?', correct: 'Your deepest desire', wrong: ['Your future', 'Your past', 'Your greatest fear'] },
+      { q: 'What is the name of the three-headed dog?', correct: 'Fluffy', wrong: ['Norbert', 'Aragog', 'Buckbeak'] },
+      { q: 'Who is hiding on the back of Professor Quirrell’s head?', correct: 'Voldemort', wrong: ['Severus Snape', 'Lucius Malfoy', 'Sirius Black'] },
+      { q: 'What is the name of Harry’s pet owl?', correct: 'Hedwig', wrong: ['Errol', 'Pigwidgeon', 'Scabbers'] },
+      { q: 'Which family raises Harry before Hogwarts?', correct: 'The Dursleys', wrong: ['The Weasleys', 'The Malfoys', 'The Grangers'] },
+    ],
+  },
+
+  alice: {
+    title: 'Alice’s Adventures in Wonderland',
+    author: 'Lewis Carroll',
+    questions: [
+      { q: 'Who wrote Alice’s Adventures in Wonderland?', correct: 'Lewis Carroll', wrong: ['J.M. Barrie', 'Edward Lear', 'Kenneth Grahame'] },
+      { q: 'What does Alice follow down the rabbit hole?', correct: 'The White Rabbit', wrong: ['The March Hare', 'The Cheshire Cat', 'The Dormouse'] },
+      { q: 'Which character fades away until only a grin is left?', correct: 'The Cheshire Cat', wrong: ['The Caterpillar', 'The Dodo', 'The Mock Turtle'] },
+      { q: 'Who shouts “Off with her head!”?', correct: 'The Queen of Hearts', wrong: ['The Duchess', 'The Red Queen', 'The White Queen'] },
+      { q: 'What does the Caterpillar smoke?', correct: 'A hookah', wrong: ['A cigar', 'A snuffbox', 'A candle'] },
+      { q: 'Who hosts the endless tea party with the March Hare?', correct: 'The Mad Hatter', wrong: ['The Knave of Hearts', 'The Gryphon', 'The Dodo'] },
+      { q: 'What is written on the bottle Alice drinks to shrink?', correct: 'Drink Me', wrong: ['Eat Me', 'Taste Me', 'Try Me'] },
+      { q: 'What game does the Queen of Hearts play using flamingos and hedgehogs?', correct: 'Croquet', wrong: ['Cricket', 'Golf', 'Polo'] },
+      { q: 'What is the name of Alice’s cat?', correct: 'Dinah', wrong: ['Duchess', 'Tabitha', 'Pepper'] },
+      { q: 'In which year was Alice’s Adventures in Wonderland first published?', correct: '1865', wrong: ['1845', '1871', '1889'] },
+    ],
+  },
+
+  frankenstein: {
+    title: 'Frankenstein',
+    author: 'Mary Shelley',
+    questions: [
+      { q: 'Who wrote Frankenstein?', correct: 'Mary Shelley', wrong: ['Emily Brontë', 'Charlotte Brontë', 'Ann Radcliffe'] },
+      { q: 'What is the novel’s subtitle?', correct: 'The Modern Prometheus', wrong: ['The Mad Scientist', 'The Sleepless Night', 'The Living Dead'] },
+      { q: 'At which university does Victor Frankenstein study?', correct: 'Ingolstadt', wrong: ['Oxford', 'Vienna', 'Paris'] },
+      { q: 'Whom does Victor Frankenstein marry?', correct: 'Elizabeth Lavenza', wrong: ['Justine Moritz', 'Caroline Beaufort', 'Margaret Saville'] },
+      { q: 'Which ship’s captain, writing letters to his sister, frames the story?', correct: 'Robert Walton', wrong: ['Henry Clerval', 'William Frankenstein', 'Alphonse Frankenstein'] },
+      { q: 'Where does the story’s chase come to an end?', correct: 'The Arctic', wrong: ['The Sahara', 'The Alps', 'The Scottish Highlands'] },
+      { q: 'Who is Victor’s best friend?', correct: 'Henry Clerval', wrong: ['Robert Walton', 'Felix De Lacey', 'Justine Moritz'] },
+      { q: 'Who is wrongly executed for the murder of Victor’s young brother William?', correct: 'Justine Moritz', wrong: ['Elizabeth Lavenza', 'Henry Clerval', 'Felix De Lacey'] },
+      { q: 'Which family does the creature secretly observe to learn language?', correct: 'The De Laceys', wrong: ['The Waltons', 'The Clervals', 'The Moritzes'] },
+      { q: 'In which year was Frankenstein first published?', correct: '1818', wrong: ['1798', '1845', '1860'] },
+    ],
+  },
+
+  janeeyre: {
+    title: 'Jane Eyre',
+    author: 'Charlotte Brontë',
+    questions: [
+      { q: 'Who wrote Jane Eyre?', correct: 'Charlotte Brontë', wrong: ['Emily Brontë', 'Anne Brontë', 'George Eliot'] },
+      { q: 'What is the name of Mr. Rochester’s estate?', correct: 'Thornfield Hall', wrong: ['Pemberley', 'Wuthering Heights', 'Manderley'] },
+      { q: 'Which school does Jane attend as a girl?', correct: 'Lowood', wrong: ['Gateshead', 'Marsh End', 'Ferndean'] },
+      { q: 'Who is hidden in the attic of Thornfield Hall?', correct: 'Bertha Mason', wrong: ['Adèle Varens', 'Blanche Ingram', 'Grace Poole'] },
+      { q: 'What is Jane’s job at Thornfield?', correct: 'Governess', wrong: ['Housekeeper', 'Cook', 'Lady’s maid'] },
+      { q: 'Who is Adèle?', correct: 'Mr. Rochester’s ward', wrong: ['Jane’s cousin', 'Bertha’s sister', 'Mrs. Fairfax’s daughter'] },
+      { q: 'Which relative mistreats Jane in her childhood?', correct: 'Mrs. Reed', wrong: ['Mrs. Fairfax', 'Miss Temple', 'Miss Scatcherd'] },
+      { q: 'Which friend of Jane’s dies at Lowood?', correct: 'Helen Burns', wrong: ['Diana Rivers', 'Blanche Ingram', 'Adèle Varens'] },
+      { q: 'Which clergyman proposes that Jane marry him and go to India?', correct: 'St. John Rivers', wrong: ['Mr. Brocklehurst', 'Richard Mason', 'John Reed'] },
+      { q: 'In which year was Jane Eyre first published?', correct: '1847', wrong: ['1813', '1860', '1892'] },
+    ],
+  },
+}

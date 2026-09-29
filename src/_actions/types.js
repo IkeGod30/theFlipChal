@@ -1,0 +1,7 @@
+export const START_QUIZ = 'start_quiz'
+export const ANSWER_QUESTION = 'answer_question'
+export const NEXT_QUESTION = 'next_question'
+export const FINISH_QUIZ = 'finish_quiz'
+export const QUIT_QUIZ = 'quit_quiz'
+export const ADD_ATTEMPT_CREDIT = 'add_attempt_credit'
+export const AUTH_STATE_CHANGED = 'auth_state_changed'
