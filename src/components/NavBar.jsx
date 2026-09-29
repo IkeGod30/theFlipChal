@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { logOut } from '../_actions/auth_actions'
 import { selectAuthStatus, selectUser } from '../_reducers'
 import { toast } from '../utils/toast'
+import Avatar from './Avatar'
 
 function Logo() {
   return (
@@ -42,7 +43,10 @@ export default function NavBar() {
         <NavLink to="/feature-a-book">Feature a book</NavLink>
         {status === 'signed-in' ? (
           <>
-            <span className="nav-user" title={user.email}>{user.displayName || user.email}</span>
+            <span className="nav-account" title={user.email}>
+              <Avatar name={user.displayName || user.email} seed={user.uid} />
+              <span className="nav-user">{user.displayName || user.email}</span>
+            </span>
             <button type="button" className="nav-btn" onClick={handleLogOut}>Log out</button>
           </>
         ) : status === 'signed-out' ? (
