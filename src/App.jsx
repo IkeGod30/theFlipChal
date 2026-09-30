@@ -10,6 +10,9 @@ import FeatureBookPage from './pages/FeatureBookPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
+import FaqPage from './pages/FaqPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import TermsOfUsePage from './pages/TermsOfUsePage'
 import IntroPage from './pages/IntroPage'
 import QuizPage from './pages/QuizPage'
 import ResultsPage from './pages/ResultsPage'
@@ -27,6 +30,9 @@ export default function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           <Route path="/prize/:prizeId" element={<RequireAuth><IntroPage /></RequireAuth>} />
           <Route path="/prize/:prizeId/quiz" element={<RequireAuth><QuizPage /></RequireAuth>} />
           <Route path="/prize/:prizeId/results" element={<RequireAuth><ResultsPage /></RequireAuth>} />
