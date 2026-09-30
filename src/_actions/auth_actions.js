@@ -1,8 +1,12 @@
 import {
+  EmailAuthProvider,
   createUserWithEmailAndPassword,
+  deleteUser,
+  reauthenticateWithCredential,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
+  updatePassword,
   updateProfile,
 } from 'firebase/auth'
 import { auth } from '../firebase'
@@ -31,6 +35,23 @@ export function resetPassword(email) {
   return sendPasswordResetEmail(auth, email)
 }
 
+function reauthenticate(password) {
+  const user = auth.currentUser
+  return reauthenticateWithCredential(user, EmailAuthProvider.credential(user.email, password))
+}
+
+// Firebase requires a recent sign-in for both of these; re-entering the current password
+// satisfies that and doubles as the user confirming it's really them.
+export async function changePassword(currentPassword, newPassword) {
+  await reauthenticate(currentPassword)
+  await updatePassword(auth.currentUser, newPassword)
+}
+
+export async function deleteAccount(currentPassword) {
+  await reauthenticate(currentPassword)
+  await deleteUser(auth.currentUser)
+}
+
 // Friendlier text for the handful of errors a signup/login form actually hits.
 export function authErrorMessage(err) {
   switch (err.code) {
@@ -47,6 +68,8 @@ export function authErrorMessage(err) {
       return 'No account found for that email.'
     case 'auth/too-many-requests':
       return 'Too many attempts. Please wait a moment and try again.'
+    case 'auth/requires-recent-login':
+      return 'Please log out and back in, then try again.'
     default:
       return err.message || 'Something went wrong. Please try again.'
   }

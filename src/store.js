@@ -8,6 +8,7 @@ import { AUTH_STATE_CHANGED } from './_actions/types'
 const PERSISTED = {
   leaderboard: 'flipchal:leaderboard:v2',
   attempts: 'flipchal:attempts:v1',
+  avatars: 'flipchal:avatars:v1',
 }
 
 function load(key) {

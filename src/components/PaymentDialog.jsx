@@ -29,7 +29,7 @@ export default function PaymentDialog({ prize, onPaid, onCancel }) {
   return (
     <dialog
       ref={ref}
-      className="pay-dialog"
+      className="modal"
       aria-labelledby="pay-title"
       onCancel={(e) => {
         e.preventDefault() // Esc: close through state so the dialog and page stay in sync

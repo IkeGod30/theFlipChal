@@ -1,6 +1,5 @@
-// Initials avatar: accounts are email/password only, so there's no profile photo to show.
-// The color is derived from a stable seed (the user's uid), so the same person always gets
-// the same color across sessions and devices.
+// Initials avatar, used until (or unless) the account has an uploaded picture. The color is
+// derived from a stable seed (the user's uid), so the same person always gets the same color.
 const PALETTE = ['#b5442e', '#2e7d4f', '#3a6ea5', '#8a5a2e', '#7a4fa3', '#0f766e']
 
 function hash(str) {
@@ -16,7 +15,10 @@ function initialsFor(name) {
   return (words[0][0] + words[words.length - 1][0]).toUpperCase()
 }
 
-export default function Avatar({ name, seed, size = 32 }) {
+export default function Avatar({ name, seed, src, size = 32 }) {
+  if (src) {
+    return <img className="avatar" src={src} alt="" style={{ width: size, height: size }} />
+  }
   const color = PALETTE[hash(seed || name) % PALETTE.length]
   return (
     <span
