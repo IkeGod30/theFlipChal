@@ -152,6 +152,27 @@ h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; }
 .faq-item dt { font-weight: 700; margin-bottom: 4px; }
 .faq-item dd { margin: 0; color: var(--muted); }
 
+/* Feature a book */
+.feature-form { display: grid; gap: 8px; margin: 20px 0 0; }
+.feature-form label { font-weight: 600; }
+.feature-form input, .feature-form select, .feature-form textarea {
+  padding: 12px 14px; font: inherit; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  resize: vertical;
+}
+.feature-form .check {
+  display: flex; align-items: flex-start; gap: 8px; font-weight: 400;
+  margin: 8px 0 4px;
+}
+.feature-form .check input { width: auto; margin-top: 3px; flex: none; }
+.fee-summary {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 12px; padding: 14px 16px; border-radius: var(--radius);
+  background: var(--bg); border: 1px solid var(--line); font-size: 1.1rem;
+}
+.feature-form .btn { margin-top: 8px; }
+.feature a.btn { display: inline-block; margin: 16px 0; }
+
 /* Login / signup */
 .auth { max-width: 380px; margin: 0 auto; }
 .auth form { display: grid; gap: 8px; margin: 20px 0 16px; }
