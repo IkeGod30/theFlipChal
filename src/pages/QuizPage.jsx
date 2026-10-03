@@ -10,8 +10,10 @@ const LIMIT_MS = QUESTION_SECONDS * 1000
 
 export default function QuizPage() {
   const { prizeId } = useParams()
-  const prize = getPrize(prizeId)
   const session = useSelector((state) => state.quiz.session)
+  // Resolve against the session's own country (locked in at quiz start), not whatever the
+  // visitor's country setting happens to be right now — they might have switched it mid-quiz.
+  const prize = getPrize(prizeId, session?.countryCode)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 

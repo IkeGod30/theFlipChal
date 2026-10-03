@@ -3,12 +3,16 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase'
 import rootReducer from './_reducers'
 import { AUTH_STATE_CHANGED } from './_actions/types'
+import { setCountry } from './_actions/country_actions'
+import { geolocateCountry } from './utils/geolocateCountry'
 
 // Slices kept in localStorage so they survive a reload.
 const PERSISTED = {
-  leaderboard: 'flipchal:leaderboard:v2',
-  attempts: 'flipchal:attempts:v1',
+  leaderboard: 'flipchal:leaderboard:v3',
+  attempts: 'flipchal:attempts:v2',
   avatars: 'flipchal:avatars:v1',
+  country: 'flipchal:country:v1',
+  profile: 'flipchal:profile:v1',
 }
 
 function load(key) {
@@ -50,5 +54,12 @@ onAuthStateChanged(auth, (user) => {
     payload: user && { uid: user.uid, email: user.email, displayName: user.displayName },
   })
 })
+
+// Resolve the visitor's country from their IP once per browser. If they've already set a
+// country — detected on a past visit, or picked by hand — that choice stands; we never
+// overwrite a manual pick, and there's no need to re-run detection on every load.
+if (!store.getState().country.source) {
+  geolocateCountry().then((code) => store.dispatch(setCountry(code, 'detected')))
+}
 
 export default store

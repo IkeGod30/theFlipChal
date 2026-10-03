@@ -47,7 +47,7 @@ h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; }
   padding: 12px clamp(16px, 4vw, 64px);
   background: var(--surface); border-bottom: 1px solid var(--line);
 }
-.nav-links { display: flex; gap: 8px; }
+.nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .navbar a {
   padding: 8px 14px; border-radius: 10px; font-weight: 600;
   color: var(--muted); text-decoration: none;
@@ -156,12 +156,20 @@ h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; }
 .auth { max-width: 380px; margin: 0 auto; }
 .auth form { display: grid; gap: 8px; margin: 20px 0 16px; }
 .auth label { font-weight: 600; }
-.auth input {
+.auth input, .auth select {
   padding: 12px 14px; font: inherit; border-radius: 10px;
   border: 1px solid var(--line); background: var(--surface); color: var(--text);
 }
 .auth .btn { margin-top: 8px; }
 .auth .forgot { justify-self: end; font-size: .85rem; margin-top: -2px; }
+.signup-country { display: grid; gap: 8px; }
+
+/* Country selector in the nav bar */
+.nav-country { display: flex; align-items: center; }
+.nav-country select {
+  padding: 8px 10px; font: inherit; font-weight: 600; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+}
 
 /* Toasts */
 .toast-region {

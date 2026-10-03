@@ -25,6 +25,17 @@ export default function PrivacyPolicyPage() {
           <strong>Uploaded avatar picture.</strong> If you upload one, it’s resized and saved only
           in your own browser. It isn’t sent to a server and doesn’t follow you to another device.
         </li>
+        <li>
+          <strong>Country.</strong> On your first visit, we ask a third-party geolocation service
+          (ipapi.co) to guess your country from your device’s IP address, so we can show prizes,
+          books and prices relevant to you. You can change this at any time from the country
+          selector in the navigation bar; your choice is remembered and we won’t look it up again.
+        </li>
+        <li>
+          <strong>Signup details.</strong> Depending on your country, signing up may ask for a few
+          extra details (for example a postal code or phone number). These are saved only in your
+          own browser, the same way your avatar is.
+        </li>
       </ul>
 
       <h3>What we don’t collect</h3>

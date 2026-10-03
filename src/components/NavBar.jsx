@@ -4,6 +4,7 @@ import { logOut } from '../_actions/auth_actions'
 import { selectAuthStatus, selectUser } from '../_reducers'
 import { toast } from '../utils/toast'
 import ProfileMenu from './ProfileMenu'
+import CountrySelect from './CountrySelect'
 
 function Logo() {
   return (
@@ -41,6 +42,7 @@ export default function NavBar() {
       <div className="nav-links">
         <NavLink to="/how-to-win">How to Win</NavLink>
         <NavLink to="/feature-a-book">Feature a book</NavLink>
+        <CountrySelect id="nav-country" hideLabel className="nav-country" />
         {status === 'signed-in' ? (
           <>
             <ProfileMenu user={user} />

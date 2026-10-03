@@ -1,16 +1,20 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { prizes, getPrize } from '../data/prizes'
+import { getPrizesForCountry, getPrize } from '../data/prizes'
 import { books } from '../data/books'
-import { selectEntries } from '../_reducers'
+import { selectCountryCode, selectCountryInfo, selectEntries } from '../_reducers'
+import { formatPrizeValue } from '../utils/currency'
 import Leaderboard from '../components/Leaderboard'
 
 export default function GalleryPage() {
-  const leaderboard = useSelector((state) => state.leaderboard)
+  const countryCode = useSelector(selectCountryCode)
+  const country = useSelector(selectCountryInfo)
+  const leaderboard = useSelector((state) => state.leaderboard[countryCode] || {})
   const [selectedId, setSelectedId] = useState(null)
-  const selected = getPrize(selectedId)
-  const entries = useSelector((state) => selectEntries(state, selectedId))
+  const selected = getPrize(selectedId, countryCode)
+  const entries = useSelector((state) => selectEntries(state, countryCode, selectedId))
+  const prizes = getPrizesForCountry(countryCode)
 
   return (
     <>
@@ -19,6 +23,9 @@ export default function GalleryPage() {
         <p>
           Pick a prize. Answer 10 timed questions from a featured book. Whoever scores highest
           wins it.
+        </p>
+        <p className="note">
+          Showing prizes and books for {country.flag} {country.name}.
         </p>
       </header>
 
@@ -41,7 +48,7 @@ export default function GalleryPage() {
                     aria-hidden="true"
                   >
                     <span className="prize-emoji">{prize.emoji}</span>
-                    <span className="prize-value">{prize.value}</span>
+                    <span className="prize-value">{formatPrizeValue(prize, countryCode)}</span>
                   </span>
                   <span className="prize-body">
                     <span className="prize-name">{prize.name}</span>

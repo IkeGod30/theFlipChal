@@ -153,4 +153,74 @@ export const books = {
       { q: 'In which year was Jane Eyre first published?', correct: '1847', wrong: ['1813', '1860', '1892'] },
     ],
   },
+
+  // Country-specific picks (see data/countryBookOverrides.js): swapped in for one prize's quiz
+  // in that country, in place of the global default.
+  greatExpectations: {
+    title: 'Great Expectations',
+    author: 'Charles Dickens',
+    questions: [
+      { q: 'Who wrote Great Expectations?', correct: 'Charles Dickens', wrong: ['Thomas Hardy', 'Wilkie Collins', 'Anthony Trollope'] },
+      { q: 'Who is the novel’s narrator and protagonist?', correct: 'Pip', wrong: ['Joe Gargery', 'Herbert Pocket', 'Abel Magwitch'] },
+      { q: 'Who is the wealthy, reclusive woman who raises Estella?', correct: 'Miss Havisham', wrong: ['Mrs. Joe', 'Biddy', 'Molly'] },
+      { q: 'What is the name of the escaped convict Pip helps on the marshes?', correct: 'Magwitch', wrong: ['Compeyson', 'Orlick', 'Wemmick'] },
+      { q: 'Who is the beautiful, cold young woman Pip falls in love with?', correct: 'Estella', wrong: ['Biddy', 'Clara', 'Sarah Pocket'] },
+      { q: 'What is the name of Pip’s brother-in-law, a kind blacksmith?', correct: 'Joe Gargery', wrong: ['Mr. Pumblechook', 'Herbert Pocket', 'Mr. Wopsle'] },
+      { q: 'Who turns out to be Pip’s secret benefactor?', correct: 'Magwitch', wrong: ['Miss Havisham', 'Mr. Jaggers', 'Herbert Pocket'] },
+      { q: 'What is the name of Miss Havisham’s decaying house?', correct: 'Satis House', wrong: ['Bleak House', 'Gad’s Hill', 'Thornfield'] },
+      { q: 'Who is Pip’s close friend and roommate in London?', correct: 'Herbert Pocket', wrong: ['Mr. Wopsle', 'Orlick', 'Mr. Wemmick'] },
+      { q: 'In which year was Great Expectations first published?', correct: '1861', wrong: ['1837', '1850', '1870'] },
+    ],
+  },
+
+  handmaidsTale: {
+    title: 'The Handmaid’s Tale',
+    author: 'Margaret Atwood',
+    questions: [
+      { q: 'Who wrote The Handmaid’s Tale?', correct: 'Margaret Atwood', wrong: ['Alice Munro', 'Doris Lessing', 'Ursula K. Le Guin'] },
+      { q: 'What is the name of the totalitarian regime the novel is set in?', correct: 'The Republic of Gilead', wrong: ['The Republic of Oceania', 'New Columbia', 'The Commonwealth'] },
+      { q: 'What name is the narrator given as a Handmaid?', correct: 'Offred', wrong: ['Ofglen', 'Serena Joy', 'Moira'] },
+      { q: 'What color do Handmaids wear?', correct: 'Red', wrong: ['Blue', 'Green', 'Grey'] },
+      { q: 'What color do Commanders’ Wives typically wear?', correct: 'Blue', wrong: ['Red', 'Brown', 'Black'] },
+      { q: 'Who is in charge of training and indoctrinating the Handmaids?', correct: 'Aunt Lydia', wrong: ['Serena Joy', 'Moira', 'Aunt Elizabeth'] },
+      { q: 'What is the monthly ritual called in which a Commander tries to conceive a child with his Handmaid?', correct: 'The Ceremony', wrong: ['The Salvaging', 'The Particicution', 'The Prayvaganza'] },
+      { q: 'Who is Offred’s rebellious friend from before Gilead?', correct: 'Moira', wrong: ['Ofglen', 'Janine', 'Serena Joy'] },
+      { q: 'What is the name of the underground network that helps women escape Gilead?', correct: 'Mayday', wrong: ['The Underground', 'The Eyes', 'Sojourn'] },
+      { q: 'In which country was Margaret Atwood born?', correct: 'Canada', wrong: ['The United States', 'The United Kingdom', 'Ireland'] },
+    ],
+  },
+
+  thingsFallApart: {
+    title: 'Things Fall Apart',
+    author: 'Chinua Achebe',
+    questions: [
+      { q: 'Who wrote Things Fall Apart?', correct: 'Chinua Achebe', wrong: ['Wole Soyinka', 'Chimamanda Ngozi Adichie', 'Ngũgĩ wa Thiong’o'] },
+      { q: 'Who is the novel’s protagonist, a respected Igbo warrior and leader?', correct: 'Okonkwo', wrong: ['Unoka', 'Obierika', 'Nwoye'] },
+      { q: 'In which fictional village is the novel set?', correct: 'Umuofia', wrong: ['Mbanta', 'Abame', 'Umuru'] },
+      { q: 'What is the name of Okonkwo’s father, remembered for being lazy and in debt?', correct: 'Unoka', wrong: ['Obierika', 'Ikemefuna', 'Ezinma'] },
+      { q: 'What is the name of Okonkwo’s eldest son, who later converts to Christianity?', correct: 'Nwoye', wrong: ['Ikemefuna', 'Obierika', 'Maduka'] },
+      { q: 'What crop is central to a man’s wealth and status in Umuofia?', correct: 'Yams', wrong: ['Rice', 'Cassava', 'Palm oil'] },
+      { q: 'What is the name of the boy taken from a neighboring village, cared for by Okonkwo, whom he is later forced to help kill?', correct: 'Ikemefuna', wrong: ['Nwoye', 'Obierika', 'Maduka'] },
+      { q: 'What is Okonkwo’s best friend in Umuofia called?', correct: 'Obierika', wrong: ['Unoka', 'Nwoye', 'Ikemefuna'] },
+      { q: 'What arrives in Umuofia and contributes to the clan’s way of life “falling apart”?', correct: 'Christian missionaries and colonial rule', wrong: ['A severe famine', 'A war with a neighboring clan', 'A new trade route'] },
+      { q: 'What position does the colonial official hold who considers writing about Okonkwo at the novel’s end?', correct: 'District Commissioner', wrong: ['Governor', 'Magistrate', 'Reverend'] },
+    ],
+  },
+
+  homegoing: {
+    title: 'Homegoing',
+    author: 'Yaa Gyasi',
+    questions: [
+      { q: 'Who wrote Homegoing?', correct: 'Yaa Gyasi', wrong: ['Chimamanda Ngozi Adichie', 'Ama Ata Aidoo', 'NoViolet Bulawayo'] },
+      { q: 'The novel traces the descendants of two half-sisters born in which country?', correct: 'Ghana', wrong: ['Nigeria', 'Senegal', 'Sierra Leone'] },
+      { q: 'What are the names of the two half-sisters whose family lines the novel follows?', correct: 'Effia and Esi', wrong: ['Akua and Abena', 'Marjorie and Marcus', 'Esther and Effia'] },
+      { q: 'Which slave castle on the Gold Coast is central to the novel’s opening chapters?', correct: 'Cape Coast Castle', wrong: ['Elmina Castle', 'Fort James', 'Christiansborg Castle'] },
+      { q: 'What happens to Esi that separates her family line from Effia’s?', correct: 'She is captured and sold into slavery', wrong: ['She becomes a village chief', 'She moves to Britain', 'She marries a missionary'] },
+      { q: 'What role does the British man Effia marries hold at Cape Coast Castle?', correct: 'Governor', wrong: ['Chaplain', 'Ship’s captain', 'Doctor'] },
+      { q: 'How many generations does the novel follow, from Effia and Esi to the present day?', correct: 'Seven', wrong: ['Three', 'Five', 'Ten'] },
+      { q: 'Esi’s American descendants’ storyline moves through slavery and which later historical period?', correct: 'The Great Migration', wrong: ['The California Gold Rush', 'The Harlem Renaissance only', 'Reconstruction only'] },
+      { q: 'In which U.S. state was author Yaa Gyasi raised after being born in Ghana?', correct: 'Alabama', wrong: ['Georgia', 'New York', 'California'] },
+      { q: 'In which year was Homegoing published?', correct: '2016', wrong: ['2010', '2013', '2019'] },
+    ],
+  },
 }

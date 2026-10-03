@@ -1,4 +1,4 @@
-import { EXTRA_ATTEMPT_USD, FREE_ATTEMPTS } from '../config'
+import { FREE_ATTEMPTS } from '../config'
 import { contact } from '../data/contact'
 
 export default function TermsOfUsePage() {
@@ -6,17 +6,16 @@ export default function TermsOfUsePage() {
     <section className="info">
       <h2>Terms of Use</h2>
       <p className="note">
-        This is a plain-language draft, not a finished legal document. In particular, a prize
-        contest that lets people pay for extra attempts can trigger sweepstakes or lottery
-        regulations in many places, which usually require a free method of entry and published
-        official rules. Have this page reviewed by a lawyer before running a real prize contest.
+        This is a plain-language draft, not a finished legal document. Have it reviewed by a
+        lawyer before running a real prize contest, including whatever eligibility, entry and
+        winner-selection rules your jurisdiction requires.
       </p>
 
       <h3>The quiz</h3>
       <p>
-        You need an account to take a quiz. Each account gets {FREE_ATTEMPTS} free attempt per
-        prize; additional attempts are offered for a ${EXTRA_ATTEMPT_USD} donation. Scores and
-        display names may be shown publicly on that prize’s leaderboard.
+        You need an account to take a quiz. Each account gets {FREE_ATTEMPTS} attempt per prize —
+        there's no way to buy or earn an extra one. Scores and display names may be shown
+        publicly on that prize’s leaderboard.
       </p>
 
       <h3>Prizes</h3>

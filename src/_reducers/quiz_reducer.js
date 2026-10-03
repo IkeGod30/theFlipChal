@@ -1,7 +1,7 @@
 import { ANSWER_QUESTION, FINISH_QUIZ, NEXT_QUESTION, QUIT_QUIZ, START_QUIZ } from '../_actions/types'
 
-// session: { prizeId, playerName, playerKey, questions, index, answers: [{ choice, correct, timeMs }], status: 'active' | 'finished' }
-// lastResult: { prizeId, name, score, timeMs, at } of the most recently finished quiz
+// session: { prizeId, playerName, playerKey, countryCode, questions, index, answers: [{ choice, correct, timeMs }], status: 'active' | 'finished' }
+// lastResult: { prizeId, countryCode, name, score, timeMs, at } of the most recently finished quiz
 const initialState = { session: null, lastResult: null }
 
 export default function quizReducer(state = initialState, action) {

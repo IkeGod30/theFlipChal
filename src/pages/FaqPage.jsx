@@ -1,4 +1,4 @@
-import { EXTRA_ATTEMPT_USD, FREE_ATTEMPTS, QUESTION_SECONDS } from '../config'
+import { FREE_ATTEMPTS, QUESTION_SECONDS } from '../config'
 
 const FAQS = [
   {
@@ -7,7 +7,7 @@ const FAQS = [
   },
   {
     q: 'How many times can I attempt a quiz?',
-    a: `Each account gets ${FREE_ATTEMPTS} free attempt per prize. If you'd like another try, you can donate $${EXTRA_ATTEMPT_USD} for each extra attempt.`,
+    a: `Each account gets ${FREE_ATTEMPTS} attempt per prize. There's no way to get an extra attempt, so take your time and make it count.`,
   },
   {
     q: 'How much time do I get per question?',

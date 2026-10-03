@@ -15,12 +15,14 @@ import { auth } from '../firebase'
 // (see store.js) listens to Firebase's own auth-state stream and dispatches AUTH_STATE_CHANGED
 // from there, so the store and Firebase's notion of "who's signed in" can never disagree.
 
+// Resolves to the new account's uid, so the caller can attach country/profile details to it.
 export async function signUp(name, email, password) {
   const { user } = await createUserWithEmailAndPassword(auth, email, password)
   await updateProfile(user, { displayName: name })
   // updateProfile doesn't push into the auth-state stream, so the store won't see the name
   // until the next refresh unless we tell it now.
   auth.currentUser.reload && (await auth.currentUser.reload())
+  return user.uid
 }
 
 export function logIn(email, password) {

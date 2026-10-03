@@ -1,24 +1,19 @@
-import { useState } from 'react'
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import { getPrize } from '../data/prizes'
-import { EXTRA_ATTEMPT_USD } from '../config'
-import { addAttemptCredit, startQuiz } from '../_actions/quiz_actions'
 import { attemptsRemaining, selectAttemptRecord, selectEntries } from '../_reducers'
 import { formatTime } from '../utils/quiz'
 import Leaderboard from '../components/Leaderboard'
-import PaymentDialog from '../components/PaymentDialog'
 
 export default function ResultsPage() {
   const { prizeId } = useParams()
-  const prize = getPrize(prizeId)
   const result = useSelector((state) => state.quiz.lastResult)
+  // The country the quiz was actually taken in, not whatever the visitor's setting is now.
+  const countryCode = result?.countryCode
+  const prize = getPrize(prizeId, countryCode)
   const playerKey = useSelector((state) => state.quiz.session?.playerKey)
-  const entries = useSelector((state) => selectEntries(state, prizeId))
-  const record = useSelector((state) => selectAttemptRecord(state, prizeId, playerKey))
-  const [paying, setPaying] = useState(false)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const entries = useSelector((state) => selectEntries(state, countryCode, prizeId))
+  const record = useSelector((state) => selectAttemptRecord(state, countryCode, prizeId, playerKey))
 
   if (!prize || result?.prizeId !== prizeId) return <Navigate to={`/prize/${prizeId}`} replace />
 
@@ -28,18 +23,7 @@ export default function ResultsPage() {
   const message =
     result.score === 10 ? 'Flawless!' : result.score >= 7 ? 'Great reading!' : result.score >= 4 ? 'Not bad.' : 'Time to re-read.'
 
-  const needsPayment = attemptsRemaining(record) <= 0
-
-  const begin = () => {
-    dispatch(startQuiz(prize.id, prize.bookId, playerName, playerKey))
-    navigate(`/prize/${prize.id}/quiz`)
-  }
-
-  const onPaid = () => {
-    dispatch(addAttemptCredit(prize.id, playerKey))
-    setPaying(false)
-    begin()
-  }
+  const used = attemptsRemaining(record) <= 0
 
   return (
     <section className="results">
@@ -54,16 +38,14 @@ export default function ResultsPage() {
 
       <h3>{prize.emoji} {prize.name} leaderboard</h3>
       <Leaderboard entries={entries} highlight={playerName} />
-      <p className="note">Highest score wins. Ties go to the faster total time.</p>
+      <p className="note">
+        Highest score wins. Ties go to the faster total time.
+        {used && ' You’ve used your one attempt on this prize.'}
+      </p>
 
       <div className="actions">
-        <button className="btn primary" onClick={needsPayment ? () => setPaying(true) : begin}>
-          {needsPayment ? `Donate $${EXTRA_ATTEMPT_USD} for another attempt` : 'Try again'}
-        </button>
         <Link className="btn" to="/">Back to prizes</Link>
       </div>
-
-      {paying && <PaymentDialog prize={prize} onPaid={onPaid} onCancel={() => setPaying(false)} />}
     </section>
   )
 }
